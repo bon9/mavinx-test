@@ -1,0 +1,12 @@
+.app {
+	display: flex;
+	flex-direction: column;
+	max-width: 1200px;
+	align-items: center;
+	box-sizing: border-box;
+	margin: 0 auto;
+}
+
+.content {
+	width: 100%;
+}
