@@ -1,11 +1,10 @@
 import React from "react";
-import classes from "./Modal.css";
-import Aux from "../../../hoc/Auxiliary/Auxiliary";
+import classes from "./Modal.module.css";
 import Backdrop from "../Backdrop/Backdrop";
 
 const Modal = props => {
   return (
-    <Aux>
+    <>
       <Backdrop show={props.show} clicked={props.modalClosed} />
       <div
         className={classes.Modal}
@@ -16,14 +15,13 @@ const Modal = props => {
       >
         {props.children}
       </div>
-    </Aux>
+    </>
   );
 };
 
 export default React.memo(
   Modal,
   (prevProps, nextProps) =>
-    // условие при которых Modal не обновится
     nextProps.show === prevProps.show &&
     nextProps.children === prevProps.children
 );

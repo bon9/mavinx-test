@@ -2,18 +2,35 @@ import React from "react";
 import ReactDOM from "react-dom";
 import { BrowserRouter } from "react-router-dom";
 import { Provider } from "react-redux";
-import { createStore, applyMiddleware } from "redux";
+import { createStore, applyMiddleware, combineReducers, compose } from "redux";
 import createSagaMiddleware from "redux-saga";
 
 import "./index.css";
 import App from "./App";
 
-import authReducer from "./store/reducers/auth";
-import { watchAuth } from "./store/sagas/index";
+import registrationReducer from "./store/reducers/registrationReducer";
+import authReducer from "./store/reducers/authReducer";
+import editReducer from "./store/reducers/editReducer";
+import { watchRegistration, watchAuth, watchEdit } from "./store/sagas";
+
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+
 const sagaMiddleware = createSagaMiddleware();
 
-const store = createStore(authReducer, applyMiddleware(sagaMiddleware));
+const rootReducers = combineReducers({
+  registration: registrationReducer,
+  auth: authReducer,
+  edit: editReducer
+});
+
+const store = createStore(
+  rootReducers,
+  composeEnhancers(applyMiddleware(sagaMiddleware))
+);
+
+sagaMiddleware.run(watchRegistration);
 sagaMiddleware.run(watchAuth);
+sagaMiddleware.run(watchEdit);
 
 const app = (
   <Provider store={store}>

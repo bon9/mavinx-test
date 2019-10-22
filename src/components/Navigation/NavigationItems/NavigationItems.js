@@ -2,21 +2,15 @@ import React from "react";
 import classes from "./NavigationItems.module.css";
 import NavigationItem from "./NavigationItem/NavigationItem";
 
-const navigationItems = ({ isReg, isLogOn }) => {
+const navigationItems = ({ isAuth }) => {
   let navigationItemList = (
-    <NavigationItem link="/registatrion">Registration</NavigationItem>
+    <>
+      <NavigationItem link="/login">Login</NavigationItem>
+      <NavigationItem link="/registatrion">Registatrion</NavigationItem>
+    </>
   );
 
-  if (isReg) {
-    navigationItemList = (
-      <>
-        <NavigationItem link="/login">Login</NavigationItem>
-        <NavigationItem link="/registatrion">Registatrion</NavigationItem>
-      </>
-    );
-  }
-
-  if (isLogOn) {
+  if (isAuth) {
     navigationItemList = (
       <>
         <NavigationItem link="/" exact>

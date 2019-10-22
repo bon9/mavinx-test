@@ -11,36 +11,30 @@ import Personal from "./containers/Personal/Personal";
 import Logout from "./containers/Logout/Logout";
 import Toolbar from "./components/Navigation/Toolbar/Toolbar";
 
-function App({ isReg, isLogOn }) {
+function App({ isAuth, user, token }) {
+  // console.log(user, token);
   let routes = (
     <Switch>
+      <Route path="/login" component={Login} />
       <Route path="/registatrion" component={Registration} />
       <Redirect to="/registatrion" />
     </Switch>
   );
-  if (isReg) {
-    routes = (
-      <Switch>
-        <Route path="/login" component={Login} />
-        <Route path="/registatrion" component={Registration} />
-        <Redirect to="/login" />
-      </Switch>
-    );
-  }
-  if (isLogOn) {
+
+  if (isAuth) {
     routes = (
       <Switch>
         {/* в каждом сделать проверку на isAuth, если фолс то перенаправить на логинизацию */}
+        <Route path="/" exact component={MainPage} />
         <Route path="/personal" component={Personal} />
         <Route path="/logout" component={Logout} />
-        <Route path="/" exact component={MainPage} />
         <Redirect to="/" />
       </Switch>
     );
   }
   return (
     <div className={classes.app}>
-      <Toolbar isLogOn={isLogOn} isReg={isReg}></Toolbar>
+      <Toolbar isAuth={isAuth}></Toolbar>
       <main className={classes.content}>{routes}</main>
     </div>
   );
@@ -48,8 +42,9 @@ function App({ isReg, isLogOn }) {
 
 const mapStateToProps = state => {
   return {
-    isReg: state.token !== null,
-    isLogOn: state.loggedOn
+    isAuth: state.auth.token !== null,
+    user: state.auth.user,
+    token: state.auth.token
   };
 };
 
