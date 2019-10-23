@@ -1,0 +1,35 @@
+	.userMenu {}
+	
+	.avatar {
+		width: 40px;
+		height: 40px;
+		border-radius: 10em;
+	}
+	
+	.btnDropDown {
+		width: 40px;
+		height: 40px;
+		border-radius: 10em;
+		margin: 0;
+		padding: 0;
+		border: none;
+		outline: 0;
+		margin-left: 10px;
+	}
+	
+	.btnDropDown:hover {
+		transform: scale(1.1);
+		cursor: pointer;
+	}
+	
+	.userMenuItem {
+		position: absolute;
+	}
+	
+	.userMenuItem a {
+		padding: 0;
+	}
+	
+	.disabled {
+		display: none
+	}

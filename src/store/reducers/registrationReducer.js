@@ -3,7 +3,9 @@ import * as actionTypes from "../actions/actionTypes";
 const initialState = {
   message: "",
   loading: false,
-  isNotValid: false
+  isNotValid: false,
+  showModal: false,
+  isRedirect: false
 };
 
 const reducer = (state = initialState, action) => {
@@ -25,7 +27,8 @@ const reducer = (state = initialState, action) => {
         ...state,
         message: payload,
         isNotValid: false,
-        loading: false
+        loading: false,
+        isRedirect: false
       };
 
     case actionTypes.REG_FAIL:
@@ -33,6 +36,24 @@ const reducer = (state = initialState, action) => {
         ...state,
         isNotValid: false,
         loading: false
+      };
+
+    case actionTypes.SHOW_MODAL:
+      return {
+        ...state,
+        isNotValid: false,
+        loading: false,
+        showModal: payload,
+        isRedirect: false
+      };
+
+    case actionTypes.IS_REDIRECT:
+      return {
+        ...state,
+        isNotValid: false,
+        loading: false,
+        showModal: false,
+        isRedirect: payload
       };
 
     default:

@@ -1,7 +1,6 @@
 import React from "react";
 import { Route, Switch, Redirect } from "react-router-dom";
 import { connect } from "react-redux";
-// import * as actions from "./store/actions/";
 
 import classes from "./App.module.css";
 import Registration from "./containers/Registration/Registration";
@@ -12,7 +11,6 @@ import Logout from "./containers/Logout/Logout";
 import Toolbar from "./components/Navigation/Toolbar/Toolbar";
 
 function App({ isAuth, user, token }) {
-  // console.log(user, token);
   let routes = (
     <Switch>
       <Route path="/login" component={Login} />
@@ -24,7 +22,6 @@ function App({ isAuth, user, token }) {
   if (isAuth) {
     routes = (
       <Switch>
-        {/* в каждом сделать проверку на isAuth, если фолс то перенаправить на логинизацию */}
         <Route path="/" exact component={MainPage} />
         <Route path="/personal" component={Personal} />
         <Route path="/logout" component={Logout} />
@@ -47,11 +44,5 @@ const mapStateToProps = state => {
     token: state.auth.token
   };
 };
-
-// const mapDispatchToProps = dispatch => {
-//   return {
-//     onTryAutoSignup: () => dispatch(actions.authCheckState())
-//   };
-// };
 
 export default connect(mapStateToProps)(App);

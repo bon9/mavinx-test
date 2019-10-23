@@ -9,15 +9,6 @@ const EditForm = ({ onSubmit, user }) => {
       onSubmit={onSubmit}
       validate={values => {
         const errors = {};
-        if (!values.name) {
-          errors.name = "The field is required";
-        }
-        if (!values.surname) {
-          errors.surname = "The field is required";
-        }
-        if (!values.role) {
-          errors.role = "The field is required";
-        }
         if (values.role && +values.role !== 1 && +values.role !== 2) {
           errors.role = "Required 1 or 2";
         }
@@ -33,6 +24,9 @@ const EditForm = ({ onSubmit, user }) => {
       render={({ handleSubmit, form, submitting, pristine, values }) => (
         <div className={classes.wrapForm}>
           <form onSubmit={handleSubmit} className={classes.form}>
+            <span className={classes.describe}>
+              Изменения применятся при следующем входе
+            </span>
             <Field name="name">
               {({ input, meta }) => (
                 <InputForm

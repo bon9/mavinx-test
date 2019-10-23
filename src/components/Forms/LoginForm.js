@@ -33,7 +33,7 @@ const LoginForm = ({ onSubmit, message }) => {
                   input={input}
                   meta={meta}
                   placeholder="Email:"
-                  message={message}
+                  message={message.email}
                   type="text"
                 />
               )}
@@ -45,7 +45,7 @@ const LoginForm = ({ onSubmit, message }) => {
                   input={input}
                   meta={meta}
                   placeholder="Password:"
-                  message={message}
+                  message={message.password}
                   type="password"
                 />
               )}

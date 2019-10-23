@@ -32,3 +32,17 @@ export const regFail = () => {
     type: actionTypes.REG_FAIL
   };
 };
+
+export const showModal = show => {
+  return {
+    type: actionTypes.SHOW_MODAL,
+    payload: show
+  };
+};
+
+export const isRedirect = show => {
+  return {
+    type: actionTypes.IS_REDIRECT,
+    payload: show
+  };
+};

@@ -21,3 +21,6 @@ export const EDIT_NOT_VALID = "EDIT_NOT_VALID";
 export const EDIT_SUCCESS = "EDIT_SUCCESS";
 export const EDIT_FAIL = "EDIT_FAIL";
 export const EDITED_STATE_CANCEL = "EDITED_STATE_CANCEL";
+
+export const SHOW_MODAL = "SHOW_MODAL";
+export const IS_REDIRECT = "IS_REDIRECT";

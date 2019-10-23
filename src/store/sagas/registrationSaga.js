@@ -1,11 +1,13 @@
-import { put } from "redux-saga/effects";
+import { put, delay } from "redux-saga/effects";
 import axios from "../../api/prozorro";
 
 import {
   regStart,
   regNotValid,
   regSuccess,
-  regFail
+  regFail,
+  showModal,
+  isRedirect
 } from "../actions/registrationActions";
 
 export function* regUserSaga({ payload }) {
@@ -26,6 +28,10 @@ export function* regUserSaga({ payload }) {
     const data = response.data;
     if (data.status) {
       yield put(regSuccess(data.message));
+      yield put(showModal(true));
+      yield delay(1500);
+      yield put(showModal(false));
+      yield put(isRedirect(true));
     } else {
       yield put(regNotValid(data.message));
     }

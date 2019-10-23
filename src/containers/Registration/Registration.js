@@ -6,28 +6,38 @@ import { registration } from "../../store/actions/registrationActions";
 import prozorro from "../../api/prozorro";
 import withErrorHandler from "./../../hoc/withErrorHandler";
 import RegistrationForm from "./../../components/Forms/RegistrationForm";
-import Portal from "./../../components/Portal/Portal";
+import ModalSuccess from "./../../components/UI/ModalSuccess/ModalSuccess";
+import { Redirect } from "react-router-dom";
 
-const Registration = ({ registration, message, isNotValid }) => {
+const Registration = ({
+  registration,
+  message,
+  isNotValid,
+  showModal,
+  isRedirect
+}) => {
   const onSubmit = values => {
     registration(values);
   };
 
-  let outputMessage = !isNotValid ? message : "";
-
-  return (
+  let summary = isRedirect ? (
+    <Redirect to="/login" />
+  ) : (
     <div className={classes.registration}>
       <RegistrationForm onSubmit={onSubmit} message={message} />
-      <Portal id="portaaal">THIS PORTAL</Portal>
-      <div>{outputMessage}</div>
+      {showModal && <ModalSuccess isNotValid={isNotValid} message={message} />}
     </div>
   );
+
+  return summary;
 };
 
 const mapStateToProps = state => {
   return {
     message: state.registration.message,
-    isNotValid: state.registration.isNotValid
+    isNotValid: state.registration.isNotValid,
+    showModal: state.registration.showModal,
+    isRedirect: state.registration.isRedirect
   };
 };
 

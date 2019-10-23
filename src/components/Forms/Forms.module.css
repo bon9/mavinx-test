@@ -1,7 +1,7 @@
 .wrapForm {
 	width: 500px;
-	background: #fff;
-	border-radius: 10px;
+	background: lightgreen;
+	border-radius: 20px;
 	overflow: hidden;
 	padding: 35px 55px 30px 55px;
 	margin: 25px 0;
@@ -19,7 +19,6 @@ input {
 
 .headerForm {
 	display: block;
-	font-family: SourceSansPro-Bold;
 	font-size: 30px;
 	color: #4b2354;
 	line-height: 1.2;
@@ -31,16 +30,7 @@ input {
 	box-shadow: inset 0 0 2px 2px red;
 }
 
-.containerInput {
-	width: 100%;
-	position: relative;
-	background-color: #fff;
-	border-radius: 20px;
-	margin-bottom: 10px;
-}
-
 .input {
-	font-family: SourceSansPro-Bold;
 	font-size: 18px;
 	border-radius: 20px;
 	color: #4b2354;
@@ -63,6 +53,7 @@ input {
 	margin-bottom: 5px;
 	text-align: center;
 	height: 19px;
+	background: transparent;
 }
 
 .btn {
@@ -96,4 +87,11 @@ input {
 
 .btnWrap {
 	display: flex
+}
+
+.describe {
+	display: block;
+	text-align: center;
+	font-style: italic;
+	padding-bottom: 10px;
 }

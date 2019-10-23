@@ -1,5 +1,5 @@
 import React from "react";
-import Modal from "../components/UI/Modal/Modal";
+import ModalError from "../components/UI/ModalError/ModalError";
 import useHttpErrorHandler from "../hooks/http-error-handler";
 
 const withErrorHandler = (WrappedComponent, axios) => {
@@ -8,9 +8,9 @@ const withErrorHandler = (WrappedComponent, axios) => {
 
     return (
       <>
-        <Modal show={error} modalClosed={clearError}>
+        <ModalError show={error} modalClosed={clearError}>
           {error ? error.message : null}
-        </Modal>
+        </ModalError>
         <WrappedComponent {...props} />
       </>
     );

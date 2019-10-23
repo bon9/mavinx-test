@@ -11,14 +11,6 @@ const Login = ({ login, isNotValid, message }) => {
     login(values);
   };
 
-  let outputMessage = "";
-
-  if (isNotValid) {
-    console.log(message);
-  } else {
-    outputMessage = message;
-  }
-
   return (
     <div className={classes.login}>
       <LoginForm onSubmit={onSubmit} message={message} />

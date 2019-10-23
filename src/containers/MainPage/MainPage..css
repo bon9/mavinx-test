@@ -1,0 +1,315 @@
+/*RIGHT SECTION*/
+
+.mainWrap {
+	color: black;
+	display: flex;
+	padding: 60px 20px 30px 20px;
+}
+
+.right {
+	flex: 9;
+	padding: 0px 25px;
+}
+
+.title {
+	font-weight: bold;
+}
+
+.result {
+	font-weight: normal;
+	margin-left: 5px;
+}
+
+.listItemResult {
+	background-color: #eee;
+	margin-top: 20px;
+}
+
+.item {
+	position: relative;
+	display: flex;
+	align-items: center;
+	padding: 20px 25px;
+}
+
+.item:before {
+	content: '';
+	position: absolute;
+	bottom: 0;
+	display: block;
+	background-color: #bbb;
+	height: 1px;
+	width: 93%;
+	text-align: center;
+	margin: 0 auto;
+}
+
+.itemLeft {
+	flex: 10;
+	border-right: 1px solid #bbb;
+	padding-right: 50px;
+}
+
+.itemHeader {
+	font-weight: bold;
+	margin: 0;
+}
+
+.itemDescribe {
+	font-size: 14px;
+	color: #444;
+}
+
+.itemHashtagWrap span {
+	margin-right: 5px;
+	font-weight: bold;
+	color: #666;
+	font-size: 14px;
+}
+
+.itemRight {
+	flex: 2
+}
+
+.priceWrap {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.priceDescribe {
+	margin: 0;
+}
+
+.price {
+	font-weight: 600;
+	font-size: 18px;
+}
+
+.priceDescribe {
+	font-size: 16px;
+}
+
+
+/*LEFT SECTION*/
+
+.left {
+	flex: 3;
+	padding: 0px 25px;
+}
+
+.headerLeft {
+	position: relative;
+	display: flex;
+	justify-content: space-between;
+	padding-bottom: 30px;
+}
+
+.headerLeft:before {
+	content: '';
+	position: absolute;
+	bottom: 0;
+	display: block;
+	background-color: #bbb;
+	height: 1px;
+	width: 93%;
+	text-align: center;
+	margin: 0 auto;
+}
+
+.btnClear {
+	border: none;
+	background-color: transparent;
+	color: #666;
+	outline: 0;
+	font-size: 14px;
+	cursor: pointer;
+}
+
+.categories {
+	position: relative;
+	padding: 30px 0;
+	font-weight: 500;
+}
+
+.categories span {
+	font-weight: normal;
+	color: #777
+}
+
+.categoriesList:before {
+	content: '';
+	position: absolute;
+	bottom: 0;
+	display: block;
+	background-color: #bbb;
+	height: 1px;
+	width: 93%;
+	text-align: center;
+	margin: 0 auto;
+}
+
+.inputWrap {
+	display: flex;
+	justify-content: space-around;
+	background-color: #eee;
+	padding: 15px;
+	margin: 10px 0;
+	border-radius: 5px;
+}
+
+.inputCategory {
+	border-bottom: 1px solid #999;
+	background-color: transparent;
+	padding-bottom: 10px;
+}
+
+.inputAdd {
+	border: none;
+	background-color: transparent;
+	color: #666;
+	outline: 0;
+	font-size: 25px;
+	font-weight: bold;
+	color: blue;
+	cursor: pointer;
+}
+
+.categoriesList {
+	position: relative;
+	margin-top: 20px;
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	padding-bottom: 30px;
+}
+
+.addedCategory {
+	display: block;
+	padding: 10px;
+	background-color: #ddd;
+	margin: 5px;
+	border-radius: 10px;
+	color: black;
+	font-size: 14px;
+}
+
+.categoryClose {
+	padding: 0 10px;
+	border-radius: 10px;
+	border: none;
+	outline: 0;
+	height: 39px;
+	cursor: pointer;
+}
+
+.categoryClose span {
+	padding: 0;
+	margin: 0;
+	display: block;
+	color: red;
+	font-weight: bold;
+	font-size: 24px;
+	transform: rotate(45deg);
+}
+
+.wrapConst {
+	display: flex;
+}
+
+.сostHeader {
+	padding: 25px 0;
+}
+
+.inputConst {
+	border: none;
+	border-bottom: 1px solid #999;
+	background-color: transparent;
+	width: 80px;
+	outline: 0;
+	cursor: pointer;
+	margin-left: 10px;
+	padding-bottom: 10px;
+}
+
+.currency {
+	border: none;
+	border-bottom: 1px solid #999;
+	padding-bottom: 5px;
+	color: #444;
+	background-color: transparent;
+}
+
+.wrapCostContent {
+	background-color: #ddd;
+	padding: 15px 20px;
+	border-radius: 5px;
+}
+
+.roller {
+	margin-top: 20px;
+	border-radius: 3px;
+	background-color: transparent;
+	cursor: pointer;
+}
+
+input[type=range] {
+	-webkit-appearance: none;
+	margin: 45px 0 20px;
+	width: 100%;
+}
+
+input[type=range]:focus {
+	outline: none;
+}
+
+input[type=range]::-webkit-slider-runnable-track {
+	width: 100%;
+	height: 4px;
+	cursor: pointer;
+	background: grey;
+}
+
+input[type=range]::-webkit-slider-thumb {
+	border: 1px solid #000000;
+	height: 16px;
+	width: 16px;
+	border-radius: 10em;
+	background: blue;
+	cursor: pointer;
+	-webkit-appearance: none;
+	margin-top: -5px;
+}
+
+input[type=range]:focus::-webkit-slider-runnable-track {
+	background: #367ebd;
+}
+
+.pagination {
+	display: flex;
+	align-items: flex-end;
+	padding: 30px 0;
+}
+
+.pagination span {
+	padding: 0 3px;
+	color: #666;
+}
+
+.pagination span.activePage {
+	font-weight: bold;
+	font-size: 18px;
+	color: black;
+}
+
+.pagination button {
+	color: rgb(98, 98, 226);
+	background-color: transparent;
+	outline: 0;
+	border: 0;
+	font-weight: 600;
+	font-size: 16px;
+	padding: 0;
+	margin: 0 10px;
+}

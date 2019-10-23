@@ -1,8 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
 import classes from "./NavigationItems.module.css";
 import NavigationItem from "./NavigationItem/NavigationItem";
+import UserMenu from "./../../UserMenu/UserMenu";
 
-const navigationItems = ({ isAuth }) => {
+const NavigationItems = ({ isAuth }) => {
+  const [showBtn, setShowBtn] = useState(false);
+
+  const handleClickBtn = () => {
+    setShowBtn(prevState => !prevState);
+  };
+
   let navigationItemList = (
     <>
       <NavigationItem link="/login">Login</NavigationItem>
@@ -16,8 +23,14 @@ const navigationItems = ({ isAuth }) => {
         <NavigationItem link="/" exact>
           Main
         </NavigationItem>
-        <NavigationItem link="/personal">Personal</NavigationItem>
-        <NavigationItem link="/logout">Logout</NavigationItem>
+        <UserMenu handleClick={handleClickBtn} showBtn={showBtn}>
+          <NavigationItem link="/personal" handleClick={handleClickBtn}>
+            Personal
+          </NavigationItem>
+          <NavigationItem link="/logout" handleClick={handleClickBtn}>
+            Logout
+          </NavigationItem>
+        </UserMenu>
       </>
     );
   }
@@ -28,4 +41,4 @@ const navigationItems = ({ isAuth }) => {
   );
 };
 
-export default navigationItems;
+export default NavigationItems;
