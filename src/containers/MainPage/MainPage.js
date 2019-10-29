@@ -75,8 +75,8 @@ const MainPage = ({ editedStateCancel }) => {
         </div>
 
         <div className="listItemResult">
-          {count.map(e => (
-            <ItemResult />
+          {count.map(c => (
+            <ItemResult key={c} />
           ))}
         </div>
 
