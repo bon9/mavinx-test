@@ -1,0 +1,21 @@
+{
+  "files": {
+    "main.css": "/mavinx-test/static/css/main.1925a05b.chunk.css",
+    "main.js": "/mavinx-test/static/js/main.28696860.chunk.js",
+    "main.js.map": "/mavinx-test/static/js/main.28696860.chunk.js.map",
+    "runtime-main.js": "/mavinx-test/static/js/runtime-main.9ba46212.js",
+    "runtime-main.js.map": "/mavinx-test/static/js/runtime-main.9ba46212.js.map",
+    "static/js/2.cb7e1e8f.chunk.js": "/mavinx-test/static/js/2.cb7e1e8f.chunk.js",
+    "static/js/2.cb7e1e8f.chunk.js.map": "/mavinx-test/static/js/2.cb7e1e8f.chunk.js.map",
+    "index.html": "/mavinx-test/index.html",
+    "precache-manifest.80107b5eeee1b4c93413e50ddf1effd2.js": "/mavinx-test/precache-manifest.80107b5eeee1b4c93413e50ddf1effd2.js",
+    "service-worker.js": "/mavinx-test/service-worker.js",
+    "static/css/main.1925a05b.chunk.css.map": "/mavinx-test/static/css/main.1925a05b.chunk.css.map"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.9ba46212.js",
+    "static/js/2.cb7e1e8f.chunk.js",
+    "static/css/main.1925a05b.chunk.css",
+    "static/js/main.28696860.chunk.js"
+  ]
+}
